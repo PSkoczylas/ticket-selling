@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'request events actions', type: :request do
   it 'returns all events' do
-    categories = create_list(:event, 10)
+    events = create_list(:event, 10)
     get "/api/v1/events"
     length = Event.all.size
     expect(response).to have_http_status(200)

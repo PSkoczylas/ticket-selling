@@ -23,13 +23,13 @@ class Api::V1::EventsController < ApplicationController
     render json: serialize(@event), status: :created
   end
 
-  # PUT /events/:id
+  # PUT /api/v1/events/:id
   def update
     @repo.update(@event, event_params)
     render json: serialize(@event)
   end
 
-  # DELETE /events/:id
+  # DELETE /api/v1/events/:id
   def destroy
     @repo.destroy(@event)
     head :no_content

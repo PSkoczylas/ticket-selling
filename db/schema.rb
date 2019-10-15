@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_154836) do
   create_table "ticket_purchases", force: :cascade do |t|
     t.string "email"
     t.string "token"
+    t.integer "amount"
     t.bigint "ticket_id", null: false
     t.index ["ticket_id"], name: "index_ticket_purchases_on_ticket_id"
   end

@@ -17,5 +17,9 @@ module ExceptionHandler
     rescue_from PaymentError do |e|
       render json: { message: e.message }, status: :payment_required
     end
+
+    rescue_from RequestedAmountError do |e|
+      render json: { message: e.message }, status: :not_acceptable
+    end
   end
 end

@@ -6,8 +6,8 @@ module Adapters
     class Gateway 
       Result = Struct.new(:amount, :currency, :token) 
       
-      class << self 
-        def charge(amount = 1, token = SecureRandom.uuid, currency = "EUR") 
+      class << self
+        def charge(token, amount = 1, currency = "EUR")
           case token.to_sym 
           when :card_error
             raise CardError.new, "Your card has been declined." 
